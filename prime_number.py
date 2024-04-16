@@ -1,28 +1,18 @@
 # 問1.　素数判定
 
+# 素数判定訂正
+
 a = int(input("aの値を入力: "))
 b = int(input("bの値を入力: "))
 
-# TODO
 def prime_number(n):
-  if n <= 1:
-    return False
+    if n <= 1:
+        return "素数ではない"
+    for i in range(2, n):
+        if n % i == 0:
+          return "素数ではない"
+    return "素数である"
 
-  elif n % 2 == 0 or n % 3 == 0:
-    return False
 
-  elif n % 5 == 0 or n % 7 == 0:
-    return False
-
-  else:
-    return True
-
-if prime_number(a):
-    print("aは素数")
-else:
-    print("aは素数ではない")
-
-if prime_number(b):
-    print("bは素数")
-else:
-    print("bは素数ではない")
+print(prime_number(a))
+print(prime_number(b))
