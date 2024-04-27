@@ -1,32 +1,22 @@
 # 問3．ユークリッドの互除法 <関数>
 
-# a = int(input("a の値を入力: "))
-# b = int(input("b の値を入力: "))
 
 # TODO
 
 def euclid(a,b):
   r = a % b
   while r != 0:
-    a = b
-    b = r
-    r = a % b
+    a, b = b, a % b
+    return b 
+    
 
-  if r == 0:
-    return b
-
-euclid(a,b)
-
-# 問 4. 互いに素　<関数>
+# 問 4. 互いに素 <関数>
 
 import random
 counts = 0
 
-def mutually_prime(a, b): 
-  if euclid(a,b) == 1: # 互いに素 ⇔ 最大公約数が 1
-    return True
-  else:
-    return False
+def mutually_prime(a, b):
+  return euclid(a, b) == 1
 
 
 # エクストラ問題
