@@ -1,18 +1,20 @@
-# 問1.　素数判定
+# 問 1. 素数判定 <関数>
+# エクストラ問題
 
-# 素数判定訂正
-
-a = int(input("aの値を入力: "))
-b = int(input("bの値を入力: "))
-
+list = [61, 10, 1, 3.14, -1]
 def prime_number(n):
-    if n <= 1:
-        return "素数ではない"
+    if not isinstance(n, int):
+      raise TypeError("int 型でないのでエラー")
+    if n < 0:
+      raise ValueError("自然数でないのでエラー")
+    elif n <= 1:
+      return False
+    
+
     for i in range(2, n):
         if n % i == 0:
-          return "素数ではない"
-    return "素数である"
+            return False
+    return True
 
-
-print(prime_number(a))
-print(prime_number(b))
+for i in list:
+  print(prime_number(i))
