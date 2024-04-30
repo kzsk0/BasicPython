@@ -4,10 +4,9 @@
 # TODO
 
 def euclid(a,b):
-  r = a % b
-  while r != 0:
+  while a % b != 0:
     a, b = b, a % b
-    return b 
+  return b
     
 
 # 問 4. 互いに素 <関数>
